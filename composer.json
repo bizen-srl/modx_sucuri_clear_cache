@@ -17,7 +17,7 @@
         "issues": "https://bitbucket.org/bizensrl/sucuriclearcache/issues",
         "forum": "http://forums.modx.com/",
         "wiki": "",
-        "source": "https://bitbucket.org/bizensrl/sucuriclearcache/"
+        "source": "https://bitbucket.org/bizensrl/sucuriclearcache.git"
     },    
     "require": {
         "php": ">=5.3"

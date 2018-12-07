@@ -7,11 +7,18 @@
 return array(
 
     array(
-        'key'  		=>     'goldentemplate.color',
-		'value'		=>     'Sample Color',
+        'key'  		=>     'api_key',
+		'value'		=>     '',
 		'xtype'		=>     'textfield',
-		'namespace' => 'goldentemplate',
-		'area' 		=> 'goldentemplate:default'
+		'namespace' => 'sucuri',
+		'area' 		=> 'sucuri:default'
+    ),
+    array(
+        'key'  		=>     'api_secret',
+		'value'		=>     '',
+		'xtype'		=>     'textfield',
+		'namespace' => 'sucuri',
+		'area' 		=> 'sucuri:default'
     ),
 );
 /*EOF*/
