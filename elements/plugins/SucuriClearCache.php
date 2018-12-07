@@ -35,12 +35,12 @@ switch ($modx->event->name) {
 
 			// calling Sucuri API to clear firewall cache
 			$api = curl_init('https://waf.sucuri.net/api?k='.$apiKey.'&s='.$apiSecret.'&a=clearcache');
-			$result = json_decode(curl_exec($api), true);
+			$result = curl_exec($api);
 
 			if (curl_exec($api)) {
-		        $modx->log(modx::LOG_LEVEL_INFO, 'Sucuri: cache for ' . $context->getOption('http_host') . ' [' . $context->key . '] successfully cleared');
+		        $modx->log(modx::LOG_LEVEL_INFO, 'Sucuri: cache for ' . $context->getOption('http_host') . ' [' . $context->key . '] successfully cleared. Success: ' . $result);
 		    } else {
-		        $modx->log(modx::LOG_LEVEL_ERROR, 'Sucuri: Something went wrong -> ' . $result['errors']);
+		        $modx->log(modx::LOG_LEVEL_ERROR, 'Sucuri: Something went wrong -> ' . curl_error($api));
 		    }
 
 		    curl_close($api);
