@@ -30,6 +30,7 @@
         "namespace": "sucuri",
         "version": "1.0.0",
         "release": "pl",
-        "category":"Sucuri"
+        "category":"Sucuri",
+        "seeds_path": ["model/seeds/"]
     }
 }

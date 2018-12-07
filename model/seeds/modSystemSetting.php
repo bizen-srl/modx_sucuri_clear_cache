@@ -8,14 +8,14 @@ return array(
 
     array(
         'key'  		=>     'sucuri.api_key',
-		'value'		=>     'a',
+		'value'		=>     '',
 		'xtype'		=>     'textfield',
 		'namespace' => 'sucuri',
 		'area' 		=> 'sucuri:default'
     ),
     array(
         'key'  		=>     'sucuri.api_secret',
-		'value'		=>     'a',
+		'value'		=>     '',
 		'xtype'		=>     'textfield',
 		'namespace' => 'sucuri',
 		'area' 		=> 'sucuri:default'
