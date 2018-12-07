@@ -7,15 +7,15 @@
 return array(
 
     array(
-        'key'  		=>     'api_key',
-		'value'		=>     '',
+        'key'  		=>     'sucuri.api_key',
+		'value'		=>     'a',
 		'xtype'		=>     'textfield',
 		'namespace' => 'sucuri',
 		'area' 		=> 'sucuri:default'
     ),
     array(
-        'key'  		=>     'api_secret',
-		'value'		=>     '',
+        'key'  		=>     'sucuri.api_secret',
+		'value'		=>     'a',
 		'xtype'		=>     'textfield',
 		'namespace' => 'sucuri',
 		'area' 		=> 'sucuri:default'
