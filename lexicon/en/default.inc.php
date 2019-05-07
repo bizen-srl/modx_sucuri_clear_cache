@@ -1,24 +1,12 @@
 <?php
 /**
- * en default topic lexicon file for yourpackage Extra
+ * en default topic lexicon file for SucuriClearCache Extra
  *
- * Copyright 2014 by You <you@mail.com>
+ * Copyright 2014 by Manuel <manuel@bizen.it>
  * Created on 10-31-2014
  *
- * yourpackage is free software; you can redistribute it and/or modify it under the
- * terms of the GNU General Public License as published by the Free Software
- * Foundation; either version 2 of the License, or (at your option) any later
- * version.
  *
- * yourpackage is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along with
- * Query; if not, write to the Free Software Foundation, Inc., 59 Temple
- * Place, Suite 330, Boston, MA 02111-1307 USA
- *
- * @package yourpackage
+ * @package SucuriClearCache
  */
 
 /**
@@ -31,8 +19,10 @@
  * @var $modx modX
  * @var $scriptProperties array
  *
- * @package goldentemplate
+ * @package SucuriClearCache
  **/
 
-$_lang['setting_goldentemplate.color'] = 'Custom Color';
-$_lang['setting_goldentemplate.color_desc'] = 'A valid hex code';
+$_lang['setting_sucuri.api_key'] = 'Api Key';
+$_lang['setting_sucuri.api_key_desc'] = 'Set here your api key, if multiple contexts set it under the single context';
+$_lang['setting_sucuri.api_secret'] = 'Api Secret';
+$_lang['setting_sucuri.api_secret_desc'] = 'Set here your api secret, if multiple contexts set it under the single context';

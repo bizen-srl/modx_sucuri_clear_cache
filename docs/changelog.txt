@@ -1,5 +1,5 @@
-Changelog for YourPackage
+Changelog for SucuriClearCache
 
-YourPackage 1.0.0
+SucuriClearCache 1.0.0
 ---------------------------------
 Initial Version that I copied from https://github.com/craftsmancoding/repo-starter

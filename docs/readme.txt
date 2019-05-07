@@ -1,13 +1,16 @@
-YourPackage
+SucuriClearCache
 -----
 
-Please put your documentation here: it's what people see when first installing your package.
+-Clear Sucuri cache automatically for every context on Cache update event.
+-Clear Sucuri cache for a single file on file update event.
 
+Instructions:
+- Go to system settings
+- Set your Api key and Api Secret from your account to the system settings, if you have multiple contexts, create new settings under the single context and set each key there.
 
-Author: You <your@email.com>
-Copyright 2015
+Author: Manuel Barbiero <manuel@bizen.it>
+Copyright 2019
 
-Official Documentation: https://github.com/
+Official Documentation: https://bitbucket.org/bizensrl/sucuriclearcache/
 
-Bugs and Feature Requests: https://github.com/
-
+Bugs and Feature Requests: https://bitbucket.org/bizensrl/sucuriclearcache/

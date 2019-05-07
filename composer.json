@@ -1,26 +1,25 @@
 {
     "name": "bizensrl/sucuriclearcache",
-    "description": "Plugin to clear the sucuri cache on 'OnBeforeCacheUpdate' modx event",
+    "description": "Plugin to clear the sucuri cache on 'OnBeforeCacheUpdate' and cache for a single file 'OnFileManagerFileUpdate' event",
     "type": "modx-package",
     "keywords": ["modx","repoman"],
-    "homepage": "https://github.com/craftsmancoding/repo-starter",
-    "license": "GPL-2.0+",
+    "homepage": "https://bitbucket.org/bizensrl/sucuriclearcache/",
+    "license": "MIT",
     "authors": [
         {
             "name": "Manuel",
-            "email": "manuel@bizen.it",
+            "email": "manuel-barbiero@bizen.it",
             "homepage" : "https://www.bizen.it"
         }        
     ],
     "support": {
         "email": "manuel@bizen.it",
-        "issues": "https://bitbucket.org/bizensrl/sucuriclearcache/issues?status=new&status=open",
+        "issues": "https://bitbucket.org/bizensrl/sucuriclearcache/issues",
         "forum": "http://forums.modx.com/",
-        "wiki": "https://bitbucket.org/bizensrl/sucuriclearcache/wiki/Home",
         "source": "https://bitbucket.org/bizensrl/sucuriclearcache.git"
     },    
     "require": {
-        "php": ">=5.3"
+        "nategood/httpful": "*"
     },
     "autoload": {
         "classmap":["model/"]
