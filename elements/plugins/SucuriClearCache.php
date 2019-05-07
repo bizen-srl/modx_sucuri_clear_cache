@@ -1,53 +1,75 @@
 <?php
 /**
  * @name SucuriClearCache
- * @description Plugin to clear the sucuri cache on 'OnBeforeCacheUpdate' modx event.
- * @PluginEvents OnBeforeCacheUpdate
+ * @author Manuel Barbiero
+ * @description Plugin to clear the sucuri cache on 'OnBeforeCacheUpdate' and cache for a single file 'OnFileManagerFileUpdate' event.
+ * @PluginEvents OnBeforeCacheUpdate,OnFileManagerFileUpdate
  */
-/**/
-
 
 // Your core_path will change depending on whether your code is running on your development environment
 // or on a production environment (deployed via a Transport Package).  Make sure you follow the pattern
 // outlined here. See https://github.com/craftsmancoding/repoman/wiki/Conventions for more info
 
-$core_path = $modx->getOption('sucuri.core_path', null, MODX_CORE_PATH.'components/sucuri/');
+$core_path = $modx->getOption('sucuri.core_path', null, MODX_CORE_PATH.'components/SucuriClearCache/');
 include_once $core_path .'vendor/autoload.php';
 
-switch ($modx->event->name) {
+ // API keys
+ $apiKey = $modx->getOption('sucuri.api_key');
+ $apiSecret = $modx->getOption('sucuri.api_secret');
 
-    case 'OnBeforeCacheUpdate':
-        
-        /* API keys*/
+ switch ($modx->event->name) {
 
-		$apiKey = $modx->getOption('sucuri.api_key');
-		$apiSecret = $modx->getOption('sucuri.api_secret');
+		case 'OnBeforeCacheUpdate':
 
 		//getting all available contexts
 		$contexts = $modx->getCollection('modContext', array('key:NOT IN' => array('mgr')));
 
 		//looping through all contexts
 		foreach ($contexts as $context) { 
-			if(empty($apiKey) && empty($apiSecret)){
-				$apiKey = $context->getOption('sucuri.api_key');
-				$apiSecret = $context->getOption('sucuri.api_secret');
+			$contextObj = $modx->getContext($context->key);
+
+			if (!empty($contextObj->getOption('sucuri.api_key')) && !empty($contextObj->getOption('sucuri.api_secret'))) {
+					// Contexts API keys
+					$apiKey = $contextObj->getOption('sucuri.api_key');
+					$apiSecret = $contextObj->getOption('sucuri.api_secret');
 			}
 
-			// calling Sucuri API to clear firewall cache
-			$api = curl_init('https://waf.sucuri.net/api?k='.$apiKey.'&s='.$apiSecret.'&a=clearcache');
-			$result = curl_exec($api);
+			// Sending get request to Sucuri API with params to clear firewall cache
+			$api = 'https://waf.sucuri.net/api?k='.$apiKey.'&s='.$apiSecret.'&a=clearcache';
+			$response = \Httpful\Request::get($api)->send();
 
-			if (curl_exec($api)) {
-		        $modx->log(modx::LOG_LEVEL_INFO, 'Sucuri: cache for ' . $context->getOption('http_host') . ' [' . $context->key . '] successfully cleared. Success: ' . $result);
-		    } else {
-		        $modx->log(modx::LOG_LEVEL_ERROR, 'Sucuri: Something went wrong -> ' . curl_error($api));
-		    }
-
-		    curl_close($api);
-		    ob_flush();
+			if ($response->body) $modx->log(modx::LOG_LEVEL_INFO, 'Sucuri: ' . $response->body);
 
 		}
         
-        break;
+	break;
+	
+		case 'OnFileManagerFileUpdate': 
+
+			//getting all available contexts
+			$contexts = $modx->getCollection('modContext', array('key:NOT IN' => array('mgr')));
+
+			//looping through all contexts
+			foreach ($contexts as $context) { 
+				$contextObj = $modx->getContext($context->key);
+
+				if (!empty($contextObj->getOption('sucuri.api_key')) && !empty($contextObj->getOption('sucuri.api_secret'))) {
+						// Contexts API keys
+						$apiKey = $contextObj->getOption('sucuri.api_key');
+						$apiSecret = $contextObj->getOption('sucuri.api_secret');
+				}
+
+				// The path of the updated file
+				$filePath = str_replace(MODX_BASE_PATH, '/', $modx->event->params['path']);
+
+				/// Sending get request to Sucuri API with params to clear firewall cache
+				$api = 'https://waf.sucuri.net/api?k='.$apiKey.'&s='.$apiSecret.'&a=clearcache&file='.$filePath;
+				$response = \Httpful\Request::get($api)->send();
+
+				if ($response->body) $modx->log(modx::LOG_LEVEL_INFO, 'Sucuri: ' . $response->body);
+			}
+		
+			break;
+		
 
 }
