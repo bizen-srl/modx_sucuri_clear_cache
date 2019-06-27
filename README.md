@@ -6,7 +6,7 @@ SucuriClearCache Plugin for MODX Revolution
 
 **Bugs and requests:** [SucuriClearCache Issues](https://github.com/bizen-srl/SucuriClearCache/issues)
 
-This plugin is for use with MODX Revolution. SucuriClearCache can be used to Clear the Sucuri cache automatically for every context on "Clear Cache" event or for a single file on "File Update".
+SucuriClearCache is a MODX Revolution plugin that can be used to clear Sucuri cache automatically for every context on "Clear Cache" event or for a single file on "File Update".
 
 Installing SucuriClearCache for MODX Revolution
 -----------------------------------------------
