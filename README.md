@@ -1,16 +1,25 @@
-##SucuriClearCache
------
 
--Clear Sucuri cache automatically for every context on Cache update event.
--Clear Sucuri cache for a single file on file update event.
+SucuriClearCache Plugin for MODX Revolution
+=======================================
 
-#Instructions:
-- Go to system settings
-- Set your Api key and Api Secret from your account to the system settings, if you have multiple contexts, create new settings under the single context and set each key there.
+**Author:** Manuel Barbiero - [Bizen Srl](https://www.bizen.it)
 
-Author: Manuel Barbiero <manuel@bizen.it>
-Copyright 2019
+**Bugs and requests:** [SucuriClearCache Issues](https://github.com/bizen-srl/SucuriClearCache/issues)
 
-Official Documentation: https://bitbucket.org/bizensrl/sucuriclearcache/
+This plugin is for use with MODX Revolution. SucuriClearCache can be used to Clear the Sucuri cache automatically for every context on "Clear Cache" event or for a single file on "File Update".
 
-Bugs and Feature Requests: https://bitbucket.org/bizensrl/sucuriclearcache/
+Installing SucuriClearCache for MODX Revolution
+-----------------------------------------------
+
+Go to System | Package Management on the main menu in the MODX Manager and click on the "Download Extras" button. That will take you to the Revolution Repository (AKA Web Transport Facility). Put SucuriClearCache in the search box and press Enter. Click on the "Download" button, and when it changes to "Downloaded," click on the "Finish" button. That should bring you back to your Package Management grid. Right click on SucuriClearCache and select "Install Package." The SucuriClearCache plugin should now be installed.
+
+How to use it
+-------------
+
+Go to system settings | Set your Api key on 'sucuri.api_key' and Api Secret 'sucuri.api_secret' from your account, if you have multiple contexts, create new settings under the single context and set each key there.
+
+
+LICENSE
+=======
+
+[MIT] (https://opensource.org/licenses/MIT)

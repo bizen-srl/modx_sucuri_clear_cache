@@ -17,6 +17,9 @@ include_once $core_path .'vendor/autoload.php';
  $apiKey = $modx->getOption('sucuri.api_key');
  $apiSecret = $modx->getOption('sucuri.api_secret');
 
+ // check if API keys are set
+ if (empty($apiKey) && empty($apiSecret)) return;
+
  switch ($modx->event->name) {
 
 		case 'OnBeforeCacheUpdate':
