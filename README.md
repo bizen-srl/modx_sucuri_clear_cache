@@ -22,4 +22,4 @@ Go to system settings | Set your Api key on 'sucuri.api_key' and Api Secret 'suc
 LICENSE
 =======
 
-[MIT] (https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)

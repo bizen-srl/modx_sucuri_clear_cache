@@ -10,7 +10,7 @@
 // or on a production environment (deployed via a Transport Package).  Make sure you follow the pattern
 // outlined here. See https://github.com/craftsmancoding/repoman/wiki/Conventions for more info
 
-$core_path = $modx->getOption('sucuri.core_path', null, MODX_CORE_PATH.'components/SucuriClearCache/');
+$core_path = $modx->getOption('sucuri.core_path', null, MODX_CORE_PATH.'components/sucuri/');
 include_once $core_path .'vendor/autoload.php';
 
  // API keys
