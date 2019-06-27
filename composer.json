@@ -3,7 +3,7 @@
     "description": "Plugin to clear the sucuri cache on 'OnBeforeCacheUpdate' and cache for a single file 'OnFileManagerFileUpdate' event",
     "type": "modx-package",
     "keywords": ["modx","repoman"],
-    "homepage": "https://bitbucket.org/bizensrl/sucuriclearcache/",
+    "homepage": "https://github.com/bizen-srl/SucuriClearCache/",
     "license": "MIT",
     "authors": [
         {
@@ -14,9 +14,9 @@
     ],
     "support": {
         "email": "manuel@bizen.it",
-        "issues": "https://bitbucket.org/bizensrl/sucuriclearcache/issues",
+        "issues": "https://github.com/bizen-srl/SucuriClearCache/issues",
         "forum": "http://forums.modx.com/",
-        "source": "https://bitbucket.org/bizensrl/sucuriclearcache.git"
+        "source": "https://github.com/bizen-srl/SucuriClearCache/"
     },    
     "require": {
         "nategood/httpful": "*"
