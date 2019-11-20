@@ -12,6 +12,8 @@ A MODX Revolution plugin that clears Sucuri cache automatically.
 ### Install
 - Simply download through Package Management, and install.
 
+SucuriClearCache is a MODX Revolution plugin that can be used to clear Sucuri cache automatically for every context on "Clear Cache" event or for a single file on "File Update".
+=======
 ### Setup
 - Go to System Settings
 - Set your API Key on `sucuri.api_key` and API Secret `sucuri.api_secret`.
